@@ -7,14 +7,12 @@
 *.tfstate.*
 .terraform.lock.hcl*
 
-*.tfvars
+
 remove_branch.sh
 generate_tag.sh
 promote_to_master.sh
 promote_to_qa.sh
-provider.tf 
 remove_tag.sh
-**/ssh_keys/*
 
 override.tf
 override.tf.json
