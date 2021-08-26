@@ -1,6 +1,6 @@
 # Copyright (c) 2021 Oracle and/or its affiliates.
 # All rights reserved. The Universal Permissive License (UPL), Version 1.0 as shown at http://oss.oracle.com/licenses/upl
-# create_wordpress.sh
+# setup_bastion_server.sh
 #
 # Purpose: The following script helps autoconfiguring a Development Staging environment on OCI
 #!/bin/bash
