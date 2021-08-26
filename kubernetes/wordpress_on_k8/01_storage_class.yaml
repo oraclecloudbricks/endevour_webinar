@@ -1,0 +1,14 @@
+# Copyright (c) 2021 Oracle and/or its affiliates.
+# All rights reserved. The Universal Permissive License (UPL), Version 1.0 as shown at http://oss.oracle.com/licenses/upl
+# 01_storage_class.yaml
+#
+# Purpose: File that handles the creation of a storage class inside Kubernetes Cluster
+
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: oci-fss
+provisioner: oracle.com/oci-fss
+parameters:
+   #Replace This with OCID of Mount Point
+   mntTargetId: ocid1.mounttarget.oc1.sa_santiago_1.aaaaaa4np2sti2neonrwyllqojxwiottmewxgylooruwcz3pfuys2ylefuyqaaaa
