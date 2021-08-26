@@ -9,6 +9,6 @@ dummy_user : dummy
 dummy_uid : 52322
 dummy_gid : 52324
 dummy_group : dummy
-dummy_passwd : Banco.01
+dummy_passwd : W3lc0m31.
 sshd_location : '/etc/ssh/sshd_config'
 dummy_user_home : /home/dummy
