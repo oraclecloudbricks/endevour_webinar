@@ -4,10 +4,9 @@
 #
 # Purpose: The following script helps autoconfiguring a Development Staging environment on OCI
 #!/bin/bash
-
 if [ "$#" -ne 2 ]; then
 
-echo "Missing arguments. Usage: ./setup_pivot.sh gituser git_email"
+echo "Missing arguments. Usage: ./setup_pivot.sh guid email"
 
 else
 
@@ -81,6 +80,7 @@ sudo runuser -l opc -c 'pip install oci'
 pip3 install --user opc  jupyterlab
 pip3 install --user opc xlutils
 pip3 install --user opc kubernetes
+sudo pip3 install ansible
 sudo pip3 install kubernetes
 sudo pip3 install virtualenv
 sudo pip3 install virtualenvwrapper

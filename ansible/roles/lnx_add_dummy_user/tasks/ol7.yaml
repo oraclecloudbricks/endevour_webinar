@@ -1,0 +1,40 @@
+---
+# Copyright (c) 2021 Oracle and/or its affiliates.
+# All rights reserved. The Universal Permissive License (UPL), Version 1.0 as shown at http://oss.oracle.com/licenses/upl
+# 
+# Purpose: Add user and group if applies
+
+- name:  "Install OS Config Dummy  for Oracle Linux 7 Block"
+  become: yes
+  block:
+
+  - name: "[1/5] Ensure group oracle group exists"
+    group:
+      name: "{{item.name}}"
+      gid : "{{dummy_gid}}"
+      state: present
+    with_items:
+      - { name: "{{dummy_user}}",gid: "{{dummy_gid}}"}
+      
+
+  - name: "[2/5] Enable ssh with password"
+    lineinfile:
+      path: "{{sshd_location}}"
+      regexp: '^PasswordAuthentication no'
+      line: 'PasswordAuthentication yes'
+
+  - name: "[3/5] Restart sshd service"
+    service:
+      name: sshd
+      state: restarted
+
+  - name: "[4/5] Change  Password for dummy"
+    user: name={{dummy_user}} update_password=always password={{dummy_passwd | password_hash('sha512')}}
+  
+  - name: "[5/5] Add Dummy  user "
+    user:
+      name: "{{dummy_user}}"
+      uid: "{{dummy_uid}}"
+      groups: "{{dummy_group}}"
+
+  when: dummyuserisconfigured.stat.isreg is not defined

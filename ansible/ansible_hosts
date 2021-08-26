@@ -1,0 +1,6 @@
+[computes]
+	lnxmachine01 ansible_ssh_host=10.0.0.81 ansible_ssh_port=22 ansible_ssh_user=opc
+    lnxmachine02 ansible_ssh_host=10.0.1.195 ansible_ssh_port=22 ansible_ssh_user=opc
+
+[computes:vars]
+	ansible_ssh_private_key_file = /home/opc/REPOS/OCIFE/endevour_webinar/terraform/compute/ssh_keys/private_ssh_key
