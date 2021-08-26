@@ -7,9 +7,9 @@
 secretGenerator:
 - name: mysql-pass
   literals:
-  - password=W3lc0m31.
+  - password=<replace_by_mysql_password>
 - name: mysql-host
   literals:
-  - host=10.0.2.44
+  - host=<replace_by_mysql_ip>
 resources:
   - 06_wordpress_deployment.yaml

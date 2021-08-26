@@ -18,7 +18,7 @@ spec:
   - nosuid
  nfs:
 # Replace this with the IP of your FSS file system in OCI
-  server: 10.0.2.32
+  server: <replace_by_IP>
 # Replace this with the Path of your FSS file system in OCI
-  path: "/endevourwordpress"
+  path: "<replace_by_mounting_point>"
   readOnly: false
