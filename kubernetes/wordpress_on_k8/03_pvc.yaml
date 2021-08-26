@@ -1,0 +1,18 @@
+# Copyright (c) 2021 Oracle and/or its affiliates.
+# All rights reserved. The Universal Permissive License (UPL), Version 1.0 as shown at http://oss.oracle.com/licenses/upl
+# 02_pvc.yaml
+#
+# Purpose: File that handles the creation of a persistent volume claims inside Kubernetes Cluster
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+ name: wp-oke-fsspv-claim
+spec:
+ storageClassName: oci-fss
+ accessModes:
+ - ReadWriteMany
+ resources:
+  requests: 
+    storage: 100Gi
+ volumeName: wp-oke-fsspv

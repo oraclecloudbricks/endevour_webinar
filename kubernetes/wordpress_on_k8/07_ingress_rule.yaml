@@ -1,0 +1,21 @@
+# Copyright (c) 2021 Oracle and/or its affiliates.
+# All rights reserved. The Universal Permissive License (UPL), Version 1.0 as shown at http://oss.oracle.com/licenses/upl
+# 07_ingress_rule.yaml
+#
+# Purpose: File that handles the creation of an ingress rule in ingress controller to get to Wordpress, by using SSL protected Load Balancer URL
+
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: hello-world-ingress-controller
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  tls:
+  - secretName: tls-secret
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: wordpress
+          servicePort: 80

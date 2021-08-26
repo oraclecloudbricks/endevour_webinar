@@ -1,0 +1,15 @@
+# Copyright (c) 2021 Oracle and/or its affiliates.
+# All rights reserved. The Universal Permissive License (UPL), Version 1.0 as shown at http://oss.oracle.com/licenses/upl
+# kustomization.yaml
+#
+# Purpose: File that handles the linkage with secrets and PaaS Enabled MySQL Database
+
+secretGenerator:
+- name: mysql-pass
+  literals:
+  - password=<replace_by_mysql_password>
+- name: mysql-host
+  literals:
+  - host=<replace_by_mysql_ip>
+resources:
+  - 06_wordpress_deployment.yaml

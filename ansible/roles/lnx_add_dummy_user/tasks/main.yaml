@@ -1,0 +1,12 @@
+---
+# Copyright (c) 2021 Oracle and/or its affiliates.
+# All rights reserved. The Universal Permissive License (UPL), Version 1.0 as shown at http://oss.oracle.com/licenses/upl
+# 
+# Purpose: main orchestrator file
+#
+- include: tasks/pre_exec.yaml
+
+- name: Tasks for Oracle Linux 7
+  include_tasks: tasks/ol7.yaml
+  when: (ansible_facts['distribution'] == "OracleLinux" and ansible_facts['distribution_major_version'] == "7") 
+- include: tasks/post_exec.yaml
